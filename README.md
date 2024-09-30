@@ -1,11 +1,11 @@
-# SSATR IA Master 2023
+# SSATR IA Master 2024
 
 ## Laboratoare SSATR
 
 ## Laborator 1 (4h)
 
 - Aspecte de programare OOP. 
-- Generarea de QR coduri utilizand libraria com.google.zxing. 
+- Generarea de QR coduri utilizand libraria com.google.zxing.
 
 ## Laborator 2 (4h)
 
