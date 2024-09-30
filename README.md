@@ -1,0 +1,1 @@
+# laborator-ssatr-ia-2024
