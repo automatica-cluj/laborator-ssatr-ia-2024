@@ -27,10 +27,10 @@ public class DBAccess {
         //conectare la baza de date            
         connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/flights", "root", "root");
     }
-
+    
     public void insertFlight(FlightInformation f) throws SQLException {
         try ( Statement s = connection.createStatement()) {
-            PreparedStatement ps = connection.prepareStatement("INSERT INTO FLIGHTS(FLIGHTNUMBER, NOOFSEATS, DEPARTUREDATE) VALUES(?,?,?)");
+            PreparedStatement ps = connection.prepareStatement("INSERT INTO flights(FLIGHTNUMBER, NOOFSEATS, DEPARTUREDATE) VALUES(?,?,?)");
             ps.setString(1, f.getFlightNumber());
             ps.setInt(2, f.getNumberOfSeats());
             ps.setString(3, f.getDepartureDate());
@@ -41,14 +41,14 @@ public class DBAccess {
 
     private void insertReservation(FlightReservation reservation) throws SQLException {
         try ( Statement s = connection.createStatement()) {
-            s.executeUpdate("INSERT INTO RESERVATIONS(FLIGHTNUMBER, NOOFTICKETS) VALUES('" + reservation.getFlightNumber() + "'," + reservation.getNoOfTickets() + ")");
+            s.executeUpdate("INSERT INTO reservations(FLIGHTNUMBER, NOOFTICKETS) VALUES('" + reservation.getFlightNumber() + "'," + reservation.getNoOfTickets() + ")");
         }
 
     }
 
     public FlightInformation findFlight(String flightNumber) throws SQLException {
         try ( Statement s = connection.createStatement()) {
-            ResultSet rs = s.executeQuery("SELECT * FROM FLIGHTS WHERE FLIGHTNUMBER='" + flightNumber + "'");
+            ResultSet rs = s.executeQuery("SELECT * FROM flights WHERE FLIGHTNUMBER='" + flightNumber + "'");
             if (rs.next()) {
                 return new FlightInformation(rs.getString("FLIGHTNUMBER"), rs.getInt("NOOFSEATS"), rs.getString("DEPARTUREDATE"));
             } else {
@@ -59,7 +59,7 @@ public class DBAccess {
 
     public void deleteFlight(String flightNumber) throws SQLException {
         try ( Statement s = connection.createStatement()) {
-            s.executeUpdate("DELETE FROM FLIGHTS WHERE FLIGHTNUMBER='" + flightNumber + "'");
+            s.executeUpdate("DELETE FROM flights WHERE FLIGHTNUMBER='" + flightNumber + "'");
         }
     }
 
@@ -67,7 +67,7 @@ public class DBAccess {
         try ( Statement s = connection.createStatement()) {
             ArrayList<FlightInformation> list = new ArrayList<>();
 
-            ResultSet rs = s.executeQuery("SELECT * FROM FLIGHTS");
+            ResultSet rs = s.executeQuery("SELECT * FROM flights");
             while (rs.next()) {
                 list.add(new FlightInformation(rs.getString("FLIGHTNUMBER"), rs.getInt("NOOFSEATS"), rs.getString("DEPARTUREDATE")));
             }
@@ -80,7 +80,7 @@ public class DBAccess {
         try ( Statement s = connection.createStatement()) {
             ArrayList<User> list = new ArrayList<>();
 
-            ResultSet rs = s.executeQuery("SELECT * FROM USERS");
+            ResultSet rs = s.executeQuery("SELECT * FROM users");
             while (rs.next()) {
                 list.add(new User(rs.getString("IDUSERS"), rs.getString("NAME")));
             }

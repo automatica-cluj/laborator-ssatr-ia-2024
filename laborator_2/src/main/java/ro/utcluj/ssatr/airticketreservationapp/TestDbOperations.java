@@ -24,8 +24,8 @@ public class TestDbOperations {
         /////////////////////////////////
         
         FlightReservationService frs = new FlightReservationService();
-        frs.addNewFlight("ABC01", 10, "10-11-2020");
-        System.out.println(frs.getAllFlights());
+//        frs.addNewFlight("ABC01", 10, "10-11-2020");
+//        System.out.println(frs.getAllFlights());
         frs.makeReservation("ABC01", 3);
         System.out.println(frs.getAllFlights());
        
