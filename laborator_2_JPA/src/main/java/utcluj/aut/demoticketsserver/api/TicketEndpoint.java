@@ -12,7 +12,6 @@ import utcluj.aut.demoticketsserver.service.TicketService;
 import java.util.List;
 
 @RestController
-//add api prefix to the path
 
 public class TicketEndpoint {
 
