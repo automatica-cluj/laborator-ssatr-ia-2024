@@ -25,3 +25,17 @@ Sa se adauge un sensor de umiditate si sa se modifice logica algoritmului de con
 ## Exercitiul 4 
 
 Sa se adauge un mecanism de logare a valorilor raportate de catre senori (T si H) intr-o baza de date. Componenta de logare in baza de date va fi implementata ca si program separat si va utiliza mqtt pentru colectarea valorilr T si H.  
+
+## Exercitiul 5
+
+Sa se ruleze aplicatia RadarDisplay. Sa se modifice aplicatia astfel incat tintele noi detectate (identificate prin bearing si distance sa fie receptionate prin intermediul unui topic MQTT). Transmiterea informatiilor despre tinte se va face in format JSON. Pentru testarea aplicatiei componenta client care transmite informatii despre tinte va fi implementata ca si program separat. Nu uitati ca pentru testare se poate utliza si clientul MQTT (https://mqttx.app/) recomandat la inceptul acestei pagini. 
+
+Un exeplu de structura JSON pentru transmiterea informatiilor despre tinte este:
+
+```json
+{
+  "bearing": 45,
+  "distance": 100
+}
+``` 
+
