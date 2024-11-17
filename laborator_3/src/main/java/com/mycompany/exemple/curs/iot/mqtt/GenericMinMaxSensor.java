@@ -13,6 +13,7 @@ import java.util.Random;
 import org.eclipse.paho.client.mqttv3.MqttClient;
 import org.eclipse.paho.client.mqttv3.MqttMessage;
 import org.eclipse.paho.client.mqttv3.MqttException;
+import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
 
 public class GenericMinMaxSensor extends Observable implements Runnable {
     private double minRange;
@@ -27,7 +28,7 @@ public class GenericMinMaxSensor extends Observable implements Runnable {
         this.measurementUnit = z;
         this.mqttTopic = topic;
         try {
-            this.client = new MqttClient(broker, MqttClient.generateClientId());
+            this.client = new MqttClient(broker, MqttClient.generateClientId(), new MemoryPersistence());
             this.client.connect();
         } catch (MqttException e) {
             e.printStackTrace();
