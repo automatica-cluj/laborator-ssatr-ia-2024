@@ -12,10 +12,14 @@
 - Baze de date si tehnologia JDBC. 
 - Comunicarea utilizand TCP\IP.
 
-## Laborator 3 (4h)
+## Laborator 3 (2h)
 
 - Protocolul MQTT si brokerul de mesaje Mosquitto.
 
 ## Laborator 4 (2h)
 
 - Protocolul AMQP si brokerul de mesaje RabbitMQ.
+
+## Laborator 5 (2h)
+
+- Diagrame UML.
