@@ -23,6 +23,11 @@ public class TicketEndpoint {
         return ticketService.saveTicket(ticket);
     }
 
+    @PostMapping("/others")
+    public Ticket addTicket2(@RequestBody Ticket ticket) {
+        return ticketService.saveTicket(ticket);
+    }
+
     @GetMapping("/tickets")
     public List<Ticket> getAllTickets() {
         return ticketService.getAllTickets();

@@ -16,9 +16,6 @@ public class RunAll {
         SensorUI s = new SensorUI( "tcp://localhost:1883","temperature",-30,30,"C");
         s.setVisible(true);
         
-        SensorUI s2 = new SensorUI( "tcp://localhost:1883","humidity",-30,30,"%");
-        s2.setVisible(true);
-        
         ArrayList<String> list = new ArrayList<>();
         list.add("temperature");
         GenericController gc = new GenericController("tcp://localhost:1883",list);
